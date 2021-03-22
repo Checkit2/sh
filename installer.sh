@@ -1,6 +1,9 @@
 sudo apt-get install libpng-dev libjpeg-dev libtiff-dev zlib1g-dev
 sudo apt-get install gcc g++
 sudo apt-get install autoconf automake libtool checkinstall
+sudo apt update
+sudo apt install tesseract-ocr
+sudo apt install libtesseract-dev
 cp test.py ~
 cp test.jpg ~
 cd ~
