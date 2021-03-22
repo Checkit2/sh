@@ -2,6 +2,7 @@ sudo apt-get install libpng-dev libjpeg-dev libtiff-dev zlib1g-dev
 sudo apt-get install gcc g++
 sudo apt-get install autoconf automake libtool checkinstall
 cp test.py ~
+cp test.jpg ~
 cd ~
 wget http://www.leptonica.org/source/leptonica-1.73.tar.gz
 sudo apt-get install gcc g++
