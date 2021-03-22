@@ -22,4 +22,6 @@ cd ~
 git clone https://github.com/tesseract-ocr/tessdata.git 
 sudo mv ~/tessdata/* /usr/local/share/tessdata/
 sudo pip install pytesseract
+sudo pip install opencv-python
+sudo pip install pandas
 python test.py
