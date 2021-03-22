@@ -28,4 +28,5 @@ sudo mv ~/tessdata/* /usr/local/share/tessdata/
 sudo pip install pytesseract
 sudo pip install opencv-python
 sudo pip install pandas
+sudo pip install rapidfuzz
 python test.py
