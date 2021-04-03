@@ -1,4 +1,4 @@
-from OpenCv import OpenCv
+import OpenCv
 
 cv = OpenCv()
 
