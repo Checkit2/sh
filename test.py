@@ -2,7 +2,7 @@ from OpenCv import OpenCv
 
 cv = OpenCv()
 
-key, value = cv.process("ni.jpeg")
+key, value = cv.process("image.jpeg")
 
 print({
     "key" : key,
