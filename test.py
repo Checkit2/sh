@@ -1,28 +1,10 @@
-import cv2
-import pytesseract
-from pytesseract import Output
-import pandas as pd
+from OpenCv import OpenCv
 
-img = cv2.imread("test.jpg")
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-thresh = cv2.threshold(gray, 127, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
+cv = OpenCv()
 
-custom_config = r'-l eng --oem 1 --psm 6 '
-d = pytesseract.image_to_data(thresh, config=custom_config, output_type=Output.DICT)
-df = pd.DataFrame(d)
+key, value = cv.process("ni.jpeg")
 
-df1 = df[(df.conf != '-1') & (df.text != ' ') & (df.text != '')]
-pd.set_option('display.max_rows', None)
-pd.set_option('display.max_columns', None)
-
-sorted_blocks = df1.groupby('block_num').first().sort_values('top').index.tolist()
-for block in sorted_blocks:
-    curr = df1[df1['block_num'] == block]
-    sel = curr[curr.text.str.len() > 3]
-    char_w = (sel.width / sel.text.str.len()).mean()
-    text = ''
-    for ix, ln in curr.iterrows():
-        text += ln['text'] + '\n'
-    text += '\n'
-
-print(text)
+print({
+    "key" : key,
+    "value" : value
+})
